@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('seed', function () {
+    Artisan::call('db:seed', ['--force' => true]);
+});
+
 Route::get('/test', function() {
     return '12345';
 });
