@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('seed', function () {
     Artisan::call('config:cache');
-    Artisan::call('migrate:fresh');
+    Artisan::call('migrate');
     Artisan::call('db:seed');
     return 'Migration Done';
 });
