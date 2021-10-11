@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('seed', function () {
-    Artisan::call('db:seed', ['--force' => true]);
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
 });
 
 Route::get('/test', function() {
